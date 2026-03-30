@@ -177,7 +177,7 @@ body {
     }
 }
 
-/* 📱 RESPONSIVIDADE COMPLETA */
+/* mobas */
 @media (max-width: 768px) {
 
     /* Header */
@@ -224,7 +224,7 @@ body {
     }
 }
 
-/* 📱 TELAS MUITO PEQUENAS (celulares menores) */
+/* tela mt pequena, pobrezinho */
 @media (max-width: 480px) {
 
     /* Header ainda mais compacto */
@@ -271,7 +271,7 @@ body {
     }
 }
 
-/* MENU HAMBURGUER */
+/* botao pra aparecer/fechar menu */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -306,7 +306,7 @@ body {
     gap: 20px;
 }
 
-/* 📱 MOBILE */
+/* mobile */
 @media (max-width: 768px) {
 
     .menu-toggle {
@@ -350,7 +350,6 @@ body {
     }
 }
 
-/* MENU HAMBURGUER */
 .menu-toggle {
     display: none;
     flex-direction: column;
