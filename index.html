@@ -8,25 +8,47 @@
     <!-- Conexão com o CSS -->
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
 
-    <!-- Botao de Tema -->
-<button id="theme-toggle" onclick="toggleTheme()">
-    <span class="icon">🌙</span>
-</button>
+<body>
 
     <!-- Fundo borrado -->
     <div class="background"></div>
 
-    <!-- Caixa de login -->
-    <div class="login-container">
-        <h2>Login</h2>
+    <!-- Header -->
+<header class="header">
+        <h1 class="logo">TesteTelaLogin</h1>
 
-        <input type="text" placeholder="Usuário"><br><br>
-        <input type="password" placeholder="Senha"><br><br>
+        <nav>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+            <a href="cadastro.html">Criar conta</a>
 
-        <button>Entrar</button>
-    </div>
-<script src="script.js"></script>
+    <!-- Botão de tema (fora da header pra não quebrar layout) -->
+    <button id="theme-toggle" onclick="toggleTheme()">
+        <span class="icon">🌙</span>
+    </button>
+    </nav>
+</header>
+
+
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <div class="login-container">
+            <h2>Entrar</h2>
+
+            <input type="text" placeholder="Usuário">
+            <input type="password" placeholder="Senha">
+
+            <button onclick="login()">Entrar</button>
+
+            <!-- Esqueci senha -->
+            <a href="#" class="forgot-password">Esqueci minha senha</a>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+
 </body>
 </html>

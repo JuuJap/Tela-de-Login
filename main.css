@@ -1,7 +1,14 @@
-/* Reset básico */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    padding-top: 80px; 
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #000;
+    animation: fadeIn 0.5s ease;
 }
 
 /* Fundo com blur */
@@ -9,11 +16,10 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-
     background: url('img/wall.png') no-repeat center;
     background-size: cover;
-
     filter: blur(8px);
+    transition: filter 0.5s ease;
     z-index: -1;
 }
 
@@ -21,32 +27,31 @@ body {
 .login-container {
     position: relative;
     z-index: 1;
-
     width: 300px;
-    margin: 150px auto;
+    margin: 120px auto;
     padding: 30px;
-
     background: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
     text-align: center;
+    transition: all 0.4s ease;
 }
 
 /* Inputs */
 .login-container input {
-    width: 90%;
+    width: 100%;
     padding: 10px;
+    margin: 10px 0;
 }
 
-/* Botão */
+/* Botão login */
 .login-container button {
     padding: 10px 20px;
     cursor: pointer;
 }
 
-/* Tema claro (padrão) */
-body {
-    background-color: #f0f0f0;
-    color: #000;
+.login-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Tema escuro */
@@ -55,19 +60,75 @@ body {
     color: #fff;
 }
 
-/* Caixa de login no escuro */
 .dark-theme .login-container {
     background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.02);
 }
 
-/* Botão */
-#theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+.dark-theme .background {
+    filter: blur(8px) brightness(0.5);
+}
 
-    width: 50px;
-    height: 50px;
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 15px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 999;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Menu */
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Links */
+.header a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Underline animado */
+.header a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 0%;
+    height: 2px;
+
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.header a:hover::after {
+    width: 100%;
+}
+
+/* botao tema */
+#theme-toggle {
+    position: static; 
+
+    width: 40px;
+    height: 40px;
 
     border: none;
     border-radius: 50%;
@@ -80,57 +141,33 @@ body {
     align-items: center;
     justify-content: center;
 
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-/* Hover */
 #theme-toggle:hover {
     transform: scale(1.1);
 }
 
 /* Ícone */
 #theme-toggle .icon {
-    font-size: 22px;
+    font-size: 20px;
     transition: transform 0.5s ease;
 }
 
-/* Animação ao trocar */
 .rotate {
     transform: rotate(360deg);
 }
 
-* {
-    transition: all 0.4s ease;
+/* Tema escuro */
+.dark-theme .header {
+    background: rgba(0, 0, 0, 0.3);
 }
 
-body, .login-container, #theme-toggle, input, button {
-    transition: 
-        background-color 0.4s ease,
-        color 0.4s ease,
-        box-shadow 0.4s ease,
-        transform 0.3s ease;
+.dark-theme #theme-toggle {
+    background: rgba(0, 0, 0, 0.4);
 }
 
-.background {
-    transition: filter 0.5s ease;
-}
-
-.dark-theme .background {
-    filter: blur(8px) brightness(0.5);
-}
-
-.login-container {
-    transition: all 0.4s ease;
-}
-
-.dark-theme .login-container {
-    transform: scale(1.02);
-}
-
-body {
-    animation: fadeIn 0.5s ease;
-}
-
+/* Fade */
 @keyframes fadeIn {
     from {
         opacity: 0.8;
