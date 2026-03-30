@@ -77,3 +77,11 @@ function login() {
         alert("Usuário ou senha incorretos!");
     }
 }
+
+function toggleMenu() {
+    const nav = document.querySelector(".header nav");
+    const toggle = document.querySelector(".menu-toggle");
+
+    nav.classList.toggle("active");
+    toggle.classList.toggle("active");
+}

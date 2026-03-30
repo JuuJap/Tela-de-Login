@@ -15,22 +15,27 @@
     <div class="background"></div>
 
     <!-- Header -->
-<header class="header">
+    <header class="header">
         <h1 class="logo">TesteTelaLogin</h1>
+
+        <!-- 🔥 BOTÃO HAMBURGUER (ADICIONADO) -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
         <nav>
             <a href="#">Sobre</a>
             <a href="#">Contato</a>
             <a href="cadastro.html">Criar conta</a>
 
-    <!-- Botão de tema (fora da header pra não quebrar layout) -->
-    <button id="theme-toggle" onclick="toggleTheme()">
-        <span class="icon">🌙</span>
-    </button>
-    </nav>
-</header>
-
-
+            <!-- Botão de tema -->
+            <button id="theme-toggle" onclick="toggleTheme()">
+                <span class="icon">🌙</span>
+            </button>
+        </nav>
+    </header>
 
     <!-- Conteúdo principal -->
     <main class="main-content">
