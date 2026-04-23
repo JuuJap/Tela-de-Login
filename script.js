@@ -40,44 +40,6 @@ window.onload = function () {
     updateIcon();
 };
 
-/* Cadastro */
-function criarConta() {
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
-    const confirm = document.getElementById("confirmPassword").value;
-
-    if (!user || !pass || !confirm) {
-        alert("Preencha todos os campos!");
-        return;
-    }
-
-    if (pass !== confirm) {
-        alert("As senhas não coincidem!");
-        return;
-    }
-
-    localStorage.setItem("usuario", user);
-    localStorage.setItem("senha", pass);
-
-    alert("Conta criada com sucesso!");
-    window.location.href = "index.html";
-}
-
-/* Login */
-function login() {
-    const user = document.querySelector("input[type='text']").value;
-    const pass = document.querySelector("input[type='password']").value;
-
-    const savedUser = localStorage.getItem("usuario");
-    const savedPass = localStorage.getItem("senha");
-
-    if (user === savedUser && pass === savedPass) {
-        alert("Login realizado!");
-    } else {
-        alert("Usuário ou senha incorretos!");
-    }
-}
-
 function toggleMenu() {
     const nav = document.querySelector(".header nav");
     const toggle = document.querySelector(".menu-toggle");
