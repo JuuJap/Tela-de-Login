@@ -4,30 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Conta</title>
-
     <link rel="stylesheet" href="main.css">
 </head>
-
 <body>
-
     <div class="background"></div>
 
     <header class="header">
         <h1 class="logo">TesteTelaCadastro</h1>
 
-        
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        
         <nav>
             <a href="#">Contato</a>
             <a href="index.html">Login</a>
-
-            <button id="theme-toggle" onclick="toggleTheme()">
+            <button id="theme-toggle" type="button" onclick="toggleTheme()">
                 <span class="icon">🌙</span>
             </button>
         </nav>
@@ -36,18 +30,14 @@
     <main>
         <div class="login-container">
             <h2>Criar Conta</h2>
-
-            <input type="text" placeholder="Usuário" id="username">
-            <input type="password" placeholder="Senha" id="password">
-            <input type="password" placeholder="Confirmar senha" id="confirmPassword">
-
-            <button onclick="criarConta()">Cadastrar</button>
-
+            <input type="text" placeholder="Usuário">
+            <input type="password" placeholder="Senha">
+            <input type="password" placeholder="Confirmar senha">
+            <button type="button">Cadastrar</button>
             <a href="index.html" class="forgot-password">Já tenho conta</a>
         </div>
     </main>
 
     <script src="script.js"></script>
-
 </body>
 </html>

@@ -1,49 +1,28 @@
-function toggleTheme() {
-    const body = document.body;
-    const icon = document.querySelector(".icon");
+const body = document.body;
+const icon = document.querySelector(".icon");
 
-    // Alterna o tema
-    body.classList.toggle("dark-theme");
-
-    // Salva no localStorage
-    const isDark = body.classList.contains("dark-theme");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-
-    // Atualiza ícone
-    icon.textContent = isDark ? "☀️" : "🌙";
-
-    // Animação
-    icon.classList.add("rotate");
-    setTimeout(() => {
-        icon.classList.remove("rotate");
-    }, 300);
-}
-
-/* Atualiza ícone sozinho */
 function updateIcon() {
-    const icon = document.querySelector(".icon");
-
-    if (!icon) return; // evita erro em páginas sem botão
-
-    const isDark = document.body.classList.contains("dark-theme");
-    icon.textContent = isDark ? "☀️" : "🌙";
+    if (icon) {
+        icon.textContent = body.classList.contains("dark-theme") ? "☀️" : "🌙";
+    }
 }
 
-/* Mantém o tema ao trocar de página */
-window.onload = function () {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-theme");
-    }
+function toggleTheme() {
+    body.classList.toggle("dark-theme");
+    localStorage.setItem(
+        "theme",
+        body.classList.contains("dark-theme") ? "dark" : "light"
+    );
 
     updateIcon();
-};
+    icon?.classList.add("rotate");
+    setTimeout(() => icon?.classList.remove("rotate"), 300);
+}
 
 function toggleMenu() {
-    const nav = document.querySelector(".header nav");
-    const toggle = document.querySelector(".menu-toggle");
-
-    nav.classList.toggle("active");
-    toggle.classList.toggle("active");
+    document.querySelector(".header nav")?.classList.toggle("active");
+    document.querySelector(".menu-toggle")?.classList.toggle("active");
 }
+
+body.classList.toggle("dark-theme", localStorage.getItem("theme") === "dark");
+updateIcon();
